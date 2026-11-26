@@ -12,3 +12,5 @@
 - [x] 더 이상 쓰지 않는 외부 리소스 정리 (Cloudflare Worker 2개, GitHub App)
 - [x] 첫 글("블로그를 시작합니다") 작성, permalink를 /:year/:month/:day/:title/ 형식으로 정리, Jekyll 샘플 글 삭제
 - [x] 사용자가 작성한 "Transformer.markdown" 파일명·front matter 수정 후 커밋·push
+- [x] `assets/images/` 폴더 생성 (이미지 업로드용, `.gitkeep`으로 빈 폴더 유지)
+- [x] 사용자가 Transformer 글에 내용 추가 → 커밋·push

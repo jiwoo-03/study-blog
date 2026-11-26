@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: 사용자가 작성한 "Transformer" 글(파일명에 날짜 없어 Jekyll이 무시하던 문제) 수정 후 커밋·push, 배포 확인 (https://jiwoo-03.github.io/study-blog/2026/11/26/transformer/)
-- 다음 작업: 사용자 지정 없음 — 필요 시 `_posts/`에 새 글 추가부터 시작 가능 (파일명은 반드시 YYYY-MM-DD-제목.md 형식)
+- 최근 완료: `assets/images/` 폴더 생성, 사용자가 Transformer 글에 실제 내용 작성 → 커밋·push 완료
+- 다음 작업: 사용자 지정 없음 — 필요 시 새 글 추가 또는 이미지 삽입부터 시작 가능
 - 보류/이슈: (아직 없음)

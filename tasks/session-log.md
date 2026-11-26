@@ -16,3 +16,5 @@
 - 사용자 판단으로 CMS 도입을 되돌리기로 결정 — admin/ 제거 후 push, Cloudflare Worker 2개 삭제, 로컬 클론 삭제, GitHub App 삭제(사용자 직접)까지 전부 정리 완료. md 파일을 직접 작성해 push하는 원래 방식으로 복귀
 - 첫 글("블로그를 시작합니다") 작성 및 push, permalink 형식을 `/:year/:month/:day/:title/`로 정리(한글 카테고리가 URL에 들어가는 문제 해결), Jekyll 기본 샘플 글 삭제
 - 사용자가 직접 만든 `_posts/Transformer.markdown`이 날짜 없는 파일명 때문에 Jekyll에 무시되는 문제 발견 → `2026-11-26-transformer.markdown`으로 리네임, front matter 추가 후 커밋·push
+- `assets/images/` 폴더 생성(`.gitkeep` 포함) 및 push, 이미지 삽입 방법(`{{ site.baseurl }}` 경로) 안내
+- 사용자가 Transformer 글에 실제 내용(Encoder/Decoder, Attention, Self Attention 등) 작성 → 빌드 확인 후 커밋·push
