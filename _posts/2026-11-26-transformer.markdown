@@ -6,7 +6,7 @@ date: 2026-11-26
 # Transformer Arvhitecture
 Transformer는 Attention만으로 만든 번역 모델로써, 2017년 구글 연구팀의 논문 **"Attention is All You Need"**에서 처음 제안됐다.
 
-<img src="{{ site.baseurl }}/assets/images/Transfomer%20Architecture%20img.png" alt="Transformer Architecture" style="max-width: 500px; width: 100%;" />
+<img src="{{ site.baseurl }}/assets/images/Transfomer%20Architecture%20img.png" alt="Transformer Architecture" style="display: block; margin: 0 auto; max-width: 350px; width: 100%;" />
 
 ## Encoder & Decoder
 
