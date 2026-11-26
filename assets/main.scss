@@ -4,13 +4,24 @@
 
 @import "minima";
 
+.site-header {
+  background-color: #7b1e3a;
+}
+
 .site-title,
 .site-title:visited {
-  color: #7b1e3a;
-  font-weight: 600;
+  color: #ffffff;
 }
 
 .site-title:hover {
-  color: #5c1629;
+  color: #f3dde2;
   text-decoration: none;
+}
+
+.site-nav .page-link {
+  color: #ffffff;
+}
+
+.site-nav .menu-icon > svg {
+  fill: #ffffff;
 }
