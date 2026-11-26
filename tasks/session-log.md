@@ -28,3 +28,5 @@
 - 사용자가 "assets/Transformer Architecture img.png"를 올렸다고 했으나 처음엔 찾지 못함 — 결국 `assets/images/Transfomer Architecture img.png`(오타 포함 실제 파일명)로 확인, Transformer 글에 이미지 삽입(baseurl + URL 인코딩) 후 커밋·push, 배포 확인
 - 이미지 크기 축소 요청 → markdown 이미지 문법을 HTML `<img>` 태그로 바꿔 `style="max-width: 500px"` 적용, 커밋·push, 배포 확인
 - 추가로 더 축소(350px) 및 가운데 정렬(`display:block; margin:0 auto`) 요청 반영, 커밋·push, 배포 확인
+- 이미지 주변 흰색 여백을 글 칸 너비에 맞게 늘려달라는 요청 → 이미지를 `<div style="background:#fff; padding:32px 0; text-align:center">`로 감싸는 방식으로 반영, 커밋·push, 배포 확인
+- 사용자가 글에 "Tansformer Encoder img.png" 플레이스홀더(blockquote)를 직접 추가해둠 — 아직 이미지 미업로드, 다음에 업로드하면 삽입 필요

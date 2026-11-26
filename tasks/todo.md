@@ -22,3 +22,5 @@
 - [x] 사용자가 올린 아키텍처 이미지(`Transfomer Architecture img.png`)를 Transformer 글에 삽입, 커밋·push, 배포 확인
 - [x] 이미지 크기 축소(max-width: 500px), 커밋·push, 배포 확인
 - [x] 이미지 추가 축소(max-width: 350px) 및 가운데 정렬, 커밋·push, 배포 확인
+- [x] 이미지 주변 흰색 패딩을 글 칸(content column) 너비에 맞게 추가, 커밋·push, 배포 확인
+- [ ] 사용자가 Encoder 섹션에 남긴 "Tansformer Encoder img.png" 플레이스홀더 — 해당 이미지 업로드 시 삽입 필요
