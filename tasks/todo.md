@@ -18,3 +18,4 @@
 - [x] 사이트 제목(.site-title)에 버건디 색상 적용 (`assets/main.scss` 생성)
 - [x] 사용자 피드백 반영 — 글씨색이 아니라 header 영역(경계선 안쪽) 배경을 버건디로 수정, 글씨는 흰색으로 대비 확보
 - [x] 사이트 제목(.site-title) 글씨를 굵게(font-weight: 700) 변경
+- [x] Transformer 글 추가 내용(Feed Forward, Add & Norm) 커밋·push, 배포 확인

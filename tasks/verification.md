@@ -66,3 +66,7 @@
 - 재빌드로 `_site/assets/main.css`에 `.site-header { background-color: #7b1e3a; }` 반영 확인 후 push
 - 사용자가 "변경이 안 보인다"고 함 → `curl`로 캐시 우회 쿼리스트링(`?v=timestamp`) 붙여 재조회, 서버/CDN에는 이미 최신 CSS가 반영되어 있음을 확인 (브라우저 캐시 문제로 결론)
 - `.site-title`에 `font-weight: 700` 추가, 로컬 빌드로 반영 확인 후 push, 배포본 캐시 우회 조회로 `font-weight:700` 포함 확인
+
+## 2026-11-26 — Transformer 글 추가 내용 push
+- 로컬 빌드가 평소보다 오래 걸림(24초, OneDrive 동기화 폴더 I/O 지연 추정) — 백그라운드로 넘어갔지만 정상 완료(exit 0), `_site` 생성 확인
+- 커밋·push 후 curl로 배포본에 새 내용("Residual" 키워드) 포함 확인
