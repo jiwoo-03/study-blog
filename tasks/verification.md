@@ -58,3 +58,9 @@
 - `_posts/Transformer.markdown`(날짜 없는 파일명, front matter 없음)로는 `jekyll build` 성공해도 `_site`에 전혀 생성되지 않음을 확인 (조용히 무시됨)
 - `2026-11-26-transformer.markdown`으로 리네임 + front matter(layout: post, title, date) 추가 후 재빌드, `_site/2026/11/26/transformer` 생성 확인
 - 배포 확인 완료: `https://jiwoo-03.github.io/study-blog/2026/11/26/transformer/` curl 응답 200 OK
+
+## 2026-11-26 — 사이트 디자인(버건디) 변경
+- minima gem 경로(`bundle show minima`)에서 `_sass/minima/_layout.scss`의 `.site-title`, `.site-header` 규칙과 기본값(`$grey-color-dark` 등) 직접 확인
+- site 루트 `assets/main.scss` 생성 (`@import "minima"` 뒤 커스텀 규칙) → 1차로 `.site-title` 글자색을 버건디(#7b1e3a)로, 빌드 결과 CSS에서 커스텀 규칙이 minima 기본 규칙보다 나중에 선언돼 우선 적용됨을 확인 후 push, 배포 확인(curl로 main.css에 7b1e3a 포함 확인)
+- 사용자 피드백으로 의도가 "글자색"이 아니라 "header 영역(경계선 안쪽) 배경색"임을 확인 → `.site-header`에 `background-color: #7b1e3a` 적용, 대비를 위해 `.site-title`/`.site-nav .page-link`/모바일 메뉴 아이콘을 흰색으로 변경
+- 재빌드로 `_site/assets/main.css`에 `.site-header { background-color: #7b1e3a; }` 반영 확인 후 push
