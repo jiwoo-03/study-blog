@@ -28,6 +28,7 @@ github_username: jiwoo-03
 
 # Build settings
 theme: minima
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
 
