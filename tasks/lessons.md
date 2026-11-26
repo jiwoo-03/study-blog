@@ -16,3 +16,5 @@
 - CMS/OAuth 연동처럼 외부 계정(Cloudflare, GitHub App)에 여러 리소스를 만드는 작업은, 막상 다 세팅해놓고 보면 사용자가 "굳이 이렇게까지 안 해도 됐다"고 되돌릴 수 있다. 되돌릴 때는 ① 블로그 저장소 내 변경(admin/) 되돌리기, ② 외부에 만든 리소스(Worker, GitHub App) 정리까지 둘 다 챙겨야 한다 — 전자만 하고 후자를 빠뜨리면 안 쓰는 리소스가 계정에 남는다. GitHub App 자체의 삭제는 API로 불가능해 사용자가 웹사이트에서 직접 해야 한다(Advanced 탭 > Danger zone).
 - Jekyll의 기본 permalink 스타일(`date`)은 `/:categories/:year/:month/:day/:title.html`이라 front matter에 한글 `categories`를 쓰면 URL 경로에 한글이 그대로 들어간다. `_config.yml`에 `permalink: /:year/:month/:day/:title/`처럼 `:categories`를 뺀 패턴을 지정해야 깔끔한 URL이 된다.
 - `_posts/`에 파일을 넣어도 파일명이 `YYYY-MM-DD-제목.md` 형식이 아니면 Jekyll이 에러 없이 그냥 조용히 무시한다(빌드 성공, 글만 안 보임). 사용자가 직접 글 파일을 만들 때는 매번 파일명 날짜 형식과 front matter(layout: post, title, date) 존재 여부를 먼저 확인해야 한다.
+- `_posts/` 안에 하위 폴더를 만들어도 permalink(URL)에는 전혀 반영되지 않는다 — 순수하게 소스 파일 정리용. 실제 테스트(폴더에 글 하나 넣고 build)로 확인함.
+- minima 테마에서 디자인(색상 등)을 바꿀 때는 site 루트에 `assets/main.scss`를 새로 만들어 `@import "minima";` 뒤에 원하는 선택자(예: `.site-title`)를 재정의하면 된다 — gem이 제공하는 기본 main.scss를 site 쪽 파일이 자동으로 덮어쓰는 Jekyll의 theme-gem 동작을 이용. CSS 캐스케이드상 같은 specificity면 나중에 선언된 규칙이 이기므로, `@import` 뒤에 커스텀 규칙을 적어야 한다.

@@ -14,3 +14,5 @@
 - [x] 사용자가 작성한 "Transformer.markdown" 파일명·front matter 수정 후 커밋·push
 - [x] `assets/images/` 폴더 생성 (이미지 업로드용, `.gitkeep`으로 빈 폴더 유지)
 - [x] 사용자가 Transformer 글에 내용 추가 → 커밋·push
+- [x] `_posts/` 하위 폴더가 URL에 영향 주는지 실험 후 안내 (영향 없음, 소스 정리용일 뿐)
+- [x] 사이트 제목(.site-title)에 버건디 색상 적용 (`assets/main.scss` 생성)

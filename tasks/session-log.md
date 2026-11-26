@@ -18,3 +18,6 @@
 - 사용자가 직접 만든 `_posts/Transformer.markdown`이 날짜 없는 파일명 때문에 Jekyll에 무시되는 문제 발견 → `2026-11-26-transformer.markdown`으로 리네임, front matter 추가 후 커밋·push
 - `assets/images/` 폴더 생성(`.gitkeep` 포함) 및 push, 이미지 삽입 방법(`{{ site.baseurl }}` 경로) 안내
 - 사용자가 Transformer 글에 실제 내용(Encoder/Decoder, Attention, Self Attention 등) 작성 → 빌드 확인 후 커밋·push
+- `_posts/` 하위 폴더가 URL에 영향 없음을 실험으로 확인 후 안내
+- Transformer 글 추가 수정사항 커밋·push
+- 사이트 제목에 버건디 색상(`#7b1e3a`) 적용 — `assets/main.scss` 생성, 배포 확인
