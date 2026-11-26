@@ -90,4 +90,13 @@
 - 1차 스크린샷에서 헤더 글자(로고/Home/About)가 안 보이는 회귀 발견 → 원인 특정(`$masthead-link-color`가 `$primary-color`를 따라가며 배경과 같은 색이 됨) 후 `$masthead-link-color`/`$masthead-link-color-hover`를 흰색 계열로 재정의, 재빌드하여 `.greedy-nav a { color: #ffffff; }`로 컴파일됨을 grep으로 확인
 - `bundle exec jekyll serve`로 재구동, 실행 중인 서버가 파일 변경을 자동 반영했는지 `curl`로 컴파일된 CSS를 직접 조회해 확인(재시작 없이 반영됨)
 - Playwright 스크린샷으로 최종 확인: 데스크톱(1280px)·모바일(390px) 홈/포스트/About 페이지 모두 헤더(버건디 배경, 흰 글씨), 본문(검정 텍스트, 버건디 링크·블록쿼트 테두리), Follow 버튼(버건디 테두리) 정상 렌더링, 가로 스크롤이나 대비 문제 없음
+- push 후 재확인 완료: `gh api .../pages/builds/latest`로 커밋 e51c6b8 기준 `status: built`, `curl`로 홈페이지 200 및 `.greedy-nav a{color:#fff}`, `7b1e3a`/`1a1a1a` 포함 확인
+
+## 2026-11-26 — 배색 복원 + 헤더 전체 폭/글자색 버그 수정
+- `assets/css/main.scss`를 커밋 3a59910 시점 내용으로 복원(배색 재설계 이전)
+- `bundle exec jekyll build` 성공 확인
+- Playwright로 1920px 뷰포트 스크린샷 촬영 → 복원 직후 버전에서도 헤더 양옆이 흰 여백으로 남는 문제를 실제로 재현·확인
+- `.masthead`에 배경색, `.greedy-nav`는 투명으로 수정 후 재빌드·재스크린샷(1920px) → 헤더가 화면 끝까지 버건디로 꽉 채워짐을 확인
+- 같은 과정에서 로고/메뉴 글자가 흰색이 아니라 회색(`#6f777d`)으로 컴파일되고 있었음을 `grep`으로 확인(`$masthead-link-color` 기본값이 `$primary-color`를 따라감) → `$masthead-link-color`/`$masthead-link-color-hover`를 변수로 재정의 후 재빌드, `.greedy-nav a{color:#fff}`로 컴파일됨을 grep으로 확인
+- Playwright로 1920px/1280px/모바일(390px) 재스크린샷 — 헤더 전체 폭 버건디, 로고/메뉴 흰 글씨, 본문은 테마 기본색(재설계 이전 상태)으로 정상 렌더링됨을 육안 확인
 - 아직 미완료: 커밋·push (사용자 승인 대기 중)

@@ -50,4 +50,10 @@
   - 1차 스크린샷에서 헤더 바의 로고/메뉴 글씨가 안 보이는 버그 발견 — `$masthead-link-color`가 기본적으로 `$primary-color`를 따라가는데, 헤더 배경도 같은 `$primary-color`로 덮어써서 "버건디 배경 위에 버건디 글씨"가 된 것이 원인. `$masthead-link-color`/`$masthead-link-color-hover`를 흰색 계열로 명시적으로 재정의해 해결
   - "Follow" 버튼(`.btn--inverse`)도 버건디 테두리/글자색으로 톤 맞춤
   - 로컬 서버 + Playwright 스크린샷(데스크톱/모바일, 홈/포스트/About)으로 재확인 — 헤더/본문/블록쿼트/버튼 모두 버건디·화이트·블랙 톤으로 정상 렌더링됨
+  - 커밋(e51c6b8)·push 완료, GitHub Pages 재빌드 후 실제 배포본에서 정상 반영 확인
+- 사용자가 배색을 기존(재설계 이전)으로 되돌려달라고 요청하면서, 헤더가 버건디 배경이긴 한데 겉 테두리가 흰색으로 잘려 보이는 이유를 질문
+  - `assets/css/main.scss`를 재설계 이전(커밋 3a59910) 버전으로 복원
+  - 1920px 등 1280px보다 넓은 화면에서 재현해보니 실제로 헤더 양옆이 흰 여백으로 남는 걸 확인 — 원인은 배경색을 `.greedy-nav`(내부, max-width 1280px로 제한됨)에 줘서였고, 바깥 `.masthead`(전체 폭)에 배경색을 주고 `.greedy-nav` 자체 배경은 투명 처리해서 해결
+  - 겸사겸사 로고/메뉴 글자색이 흰색이 아니라 흐릿한 회색으로 보이던 오래된 버그도 발견(테마의 `.greedy-nav a` 규칙이 `.site-title` 클래스 규칙보다 specificity가 높아서 이김) → `$masthead-link-color`/`$masthead-link-color-hover` 변수를 직접 재정의해서 수정
+  - 로컬 서버 + Playwright로 1920px/1280px/모바일 모두 재확인, 전체 폭 꽉 채움과 흰 글씨 모두 정상 렌더링 확인
   - 아직 커밋·push는 하지 않음 (사용자 승인 대기)

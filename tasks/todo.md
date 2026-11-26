@@ -29,4 +29,6 @@
 - [x] 테마를 Minima → minimal-mistakes(remote_theme, skin: default)로 전환, `_data/navigation.yml`(Home/About) 추가, 커스텀 버건디 배색을 새 테마 선택자로 이식
 - [x] 테마 전환 변경사항 커밋·push 및 실제 배포본 확인
 - [x] 사용자 요청으로 버건디/화이트/블랙 배색을 SCSS 변수(primary-color, text-color, link-color 등) 레벨에서 재설계 — 헤더 글자색 충돌(버건디 위 버건디 글씨) 버그 발견 후 수정
-- [ ] 배색 재설계 변경사항 커밋·push (사용자 승인 대기)
+- [x] 배색 재설계 변경사항 커밋·push 및 실제 배포본 확인
+- [x] 사용자 요청으로 배색을 재설계 이전(기존 버건디 헤더 + 테마 기본색)으로 복원, 겸사겸사 "1280px보다 넓은 화면에서 헤더 양옆이 흰색으로 남는" 구조적 버그(배경색이 `.greedy-nav`가 아니라 `.masthead`에 있어야 함) 발견·수정, 로고/메뉴 글자색이 흐린 회색으로 보이던 오래된 버그(`$masthead-link-color` 미지정)도 함께 수정
+- [x] 위 수정사항 커밋·push

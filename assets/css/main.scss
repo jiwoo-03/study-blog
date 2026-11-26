@@ -2,21 +2,22 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-// Burgundy / white / black palette — override theme defaults before they load
-$primary-color: #7b1e3a;
-$text-color: #1a1a1a;
-$background-color: #ffffff;
-$link-color: $primary-color;
-$link-color-hover: mix(#000, $primary-color, 25%);
-$link-color-visited: mix(#fff, $primary-color, 15%);
+// Header bar text color (defaults to $primary-color, which doesn't read
+// well against our burgundy masthead background below).
 $masthead-link-color: #ffffff;
 $masthead-link-color-hover: #f3dde2;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+// Color the full-width masthead bar, not just the inner (max-width) nav,
+// so the burgundy fills edge-to-edge on screens wider than the content column.
+.masthead {
+  background-color: #7b1e3a;
+}
+
 .greedy-nav {
-  background-color: $primary-color;
+  background-color: transparent;
 }
 
 .site-title {
@@ -31,14 +32,4 @@ $masthead-link-color-hover: #f3dde2;
 .navicon::before,
 .navicon::after {
   background: #ffffff;
-}
-
-.btn--inverse {
-  color: $primary-color;
-  border-color: $primary-color;
-
-  &:hover {
-    color: #ffffff;
-    background: $primary-color;
-  }
 }
