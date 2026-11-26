@@ -83,3 +83,11 @@
   - (최초 스크린샷에서 전체 화면이 흐릿하게 찍힌 현상 발견 → 테마의 fade-in 애니메이션 타이밍 문제로 확인, `--wait-for-timeout=1500` 추가 후 정상 확인됨 — 실제 버그 아님)
 - `git status`로 변경 범위 확인: `404.html`, `Gemfile`, `Gemfile.lock`, `_config.yml`, `_posts/2026-11-26-transformer.markdown`, `about.markdown` 수정, `assets/main.scss` → `assets/css/main.scss` rename, `_data/navigation.yml` 신규 — 의도하지 않은 변경 없음, `_site`/`.jekyll-cache` 등 빌드 산출물은 gitignore로 깔끔
 - 미검증(다음에 필요): 실제 GitHub Pages 배포 후(push 이후) 같은 확인을 배포 URL에서 재확인 — 로컬 `remote_theme` 다운로드가 GitHub Pages 빌드 환경에서도 동일하게 성공하는지는 push 전까지 보장 안 됨
+- push 후 재확인 완료: `gh api repos/jiwoo-03/study-blog/pages/builds/latest`로 새 커밋(3a59910) 기준 `status: built` 확인, `curl`로 홈페이지 200 및 `assets/css/main.css`에 `7b1e3a` 포함, nav 마크업(`masthead__menu-item`) 정상 포함 확인
+
+## 2026-11-26 — 버건디/화이트/블랙 배색 재설계
+- `bundle exec jekyll build` 성공, `_site/assets/css/main.css`에서 `$primary-color`→버건디, `$text-color`→#1a1a1a, 블록쿼트 테두리·버튼 테두리에도 버건디 반영됨을 grep으로 확인
+- 1차 스크린샷에서 헤더 글자(로고/Home/About)가 안 보이는 회귀 발견 → 원인 특정(`$masthead-link-color`가 `$primary-color`를 따라가며 배경과 같은 색이 됨) 후 `$masthead-link-color`/`$masthead-link-color-hover`를 흰색 계열로 재정의, 재빌드하여 `.greedy-nav a { color: #ffffff; }`로 컴파일됨을 grep으로 확인
+- `bundle exec jekyll serve`로 재구동, 실행 중인 서버가 파일 변경을 자동 반영했는지 `curl`로 컴파일된 CSS를 직접 조회해 확인(재시작 없이 반영됨)
+- Playwright 스크린샷으로 최종 확인: 데스크톱(1280px)·모바일(390px) 홈/포스트/About 페이지 모두 헤더(버건디 배경, 흰 글씨), 본문(검정 텍스트, 버건디 링크·블록쿼트 테두리), Follow 버튼(버건디 테두리) 정상 렌더링, 가로 스크롤이나 대비 문제 없음
+- 아직 미완료: 커밋·push (사용자 승인 대기 중)

@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: 테마를 Minima → minimal-mistakes(remote_theme, skin: default)로 전환. `_config.yml`/`Gemfile`/`_data/navigation.yml`(Home, About)/`about.markdown`/`404.html`/post layout 수정, 기존 버건디 배색을 새 테마 선택자로 이식(`assets/css/main.scss`). 로컬 빌드·서버 구동 및 Playwright 스크린샷(데스크톱/모바일)으로 정상 렌더링 확인 완료.
-- 다음 작업: 이 변경사항 커밋·push 여부를 사용자에게 확인 후 진행 (아직 커밋 안 함). push 후 실제 배포 URL에서도 정상 동작하는지 재확인 필요.
+- 최근 완료: 테마를 Minima → minimal-mistakes(remote_theme, skin: default)로 전환해 커밋·push·배포 확인 완료. 이어서 사용자 요청으로 버건디/화이트/블랙 배색을 SCSS 변수 레벨(`$primary-color`, `$text-color`, `$link-color`, `$masthead-link-color` 등)에서 재설계(`assets/css/main.scss`) — 헤더 글자색 충돌 버그 발견·수정 후 로컬 스크린샷으로 확인 완료.
+- 다음 작업: 배색 재설계 변경사항 커밋·push 여부를 사용자에게 확인 후 진행 (아직 커밋 안 함). push 후 실제 배포 URL에서도 정상 동작하는지 재확인 필요.
 - 보류/이슈: 카테고리 아카이브 페이지는 이번 범위에 포함하지 않음(요청받으면 추가 예정).

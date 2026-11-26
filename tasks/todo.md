@@ -27,4 +27,6 @@
 - [x] 사용자가 Figure 이미지 크기(320px) 직접 조정 → 커밋·push
 - [x] 첫 소개글("블로그를 시작합니다", hello.markdown) 삭제, 커밋·push, 배포 확인(404)
 - [x] 테마를 Minima → minimal-mistakes(remote_theme, skin: default)로 전환, `_data/navigation.yml`(Home/About) 추가, 커스텀 버건디 배색을 새 테마 선택자로 이식
-- [ ] 테마 전환 변경사항 커밋·push 및 실제 배포본 확인 (사용자 승인 대기)
+- [x] 테마 전환 변경사항 커밋·push 및 실제 배포본 확인
+- [x] 사용자 요청으로 버건디/화이트/블랙 배색을 SCSS 변수(primary-color, text-color, link-color 등) 레벨에서 재설계 — 헤더 글자색 충돌(버건디 위 버건디 글씨) 버그 발견 후 수정
+- [ ] 배색 재설계 변경사항 커밋·push (사용자 승인 대기)

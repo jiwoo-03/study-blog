@@ -44,4 +44,10 @@
   - 기존 `assets/main.scss`(버건디 헤더 커스텀 배색)를 minimal-mistakes가 실제로 로드하는 `assets/css/main.scss`로 이동, `@import "minima"` → `@import "minimal-mistakes/skins/..."` + `@import "minimal-mistakes"`로 교체, 선택자도 Minima 전용(`.site-header`, `.site-nav .page-link` 등)에서 minimal-mistakes 전용(`.greedy-nav`, `.visible-links .masthead__menu-item a`, `.navicon`)으로 재매핑
   - 로컬 환경에 OpenSSL 개발 헤더 부재로 `bundle install` 실패 → 사용자가 `sudo apt-get install -y libssl-dev pkg-config` 직접 실행 후 해결
   - `bundle exec jekyll build`/`serve`로 로컬 검증, Playwright로 데스크톱(1280px)·모바일(390px) 스크린샷 촬영해 홈/포스트 페이지 레이아웃과 배색이 정상임을 시각 확인
+  - 커밋(3a59910)·push 완료, GitHub Pages 재빌드 후 실제 배포본(https://jiwoo-03.github.io/study-blog/)에서 정상 반영 확인
+- 사용자가 디자인이 맘에 안 든다며 버건디/화이트/블랙을 적절히 섞어 예쁘게 재디자인 요청
+  - `assets/css/main.scss`에서 `@import` 전에 `$primary-color`(버건디), `$text-color`(거의 검정 #1a1a1a), `$link-color`/`$link-color-hover`/`$link-color-visited`를 재정의해 링크·인용구 왼쪽 테두리·페이지네이션 등 테마 전반에 포인트 컬러가 자연스럽게 반영되도록 함
+  - 1차 스크린샷에서 헤더 바의 로고/메뉴 글씨가 안 보이는 버그 발견 — `$masthead-link-color`가 기본적으로 `$primary-color`를 따라가는데, 헤더 배경도 같은 `$primary-color`로 덮어써서 "버건디 배경 위에 버건디 글씨"가 된 것이 원인. `$masthead-link-color`/`$masthead-link-color-hover`를 흰색 계열로 명시적으로 재정의해 해결
+  - "Follow" 버튼(`.btn--inverse`)도 버건디 테두리/글자색으로 톤 맞춤
+  - 로컬 서버 + Playwright 스크린샷(데스크톱/모바일, 홈/포스트/About)으로 재확인 — 헤더/본문/블록쿼트/버튼 모두 버건디·화이트·블랙 톤으로 정상 렌더링됨
   - 아직 커밋·push는 하지 않음 (사용자 승인 대기)

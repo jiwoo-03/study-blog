@@ -12,7 +12,6 @@ Transformer는 Attention만으로 만든 번역 모델로써, 2017년 구글 연
 </div>
 
 ## Encoder & Decoder
-
 ### Encoder
 **인코더란 Input으로 들어온 데이터를 컴퓨터가 이해할 수 있는 Tensor 형태로 변환하는 곳**으로써 쉽게 말하면 번역 과정에서 컴퓨터가 원문을 읽고 이해하는 단계이다.
 
@@ -27,7 +26,6 @@ Transformer의 Encoder에는 담은 과 같은 시스템이 작용한다.
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/Transformer%20Encoder%20img(Figure%201).png" alt="Transformer Encoder (Figure 1)" style="max-width: 320px; width: 100%;" />
 </div>
-
 
 ### Decoder
 **디코더는 인코더에서 컴퓨터가 이해할수 있는 언어로 변환된 데이터들을 다시 사람이 이해할 수 있는 데이터로 변환 시켜 출력하는 곳**을 만한다. 번역의 과정에서는 번역문을 쓰는 단계라고 생각하면 쉽다.
@@ -95,7 +93,6 @@ Input 과 Output에 들어가는 문장 sequence에 **위치 정보를 주는 �
 정리하면 `FFN` 확장 과정에서 다양한 특징을 뽑아내고 축소 과정을 통해 다시 Decoder에 연결 할 수 있는 형태로 변환하는 과정인 것입니다 그과정 에서 ReLU 함수를 거쳐 0값으로 손실되는 것을 방지하는 목적또한 포함 하고 있다고 볼 수 있습니다.
 
 ## Add & Norm 
-
 ### Add(Resdiual)
 `Residual`은 잔차 결합이라고하며, `FFN`과 `Attention`과정을 통해 손실 된 정보를 보존 하고자 기존 에 들어갔던 Data를 결합하여 데이터 손실을 방지하는 역할 을 합니다.
 
