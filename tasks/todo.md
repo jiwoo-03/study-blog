@@ -20,3 +20,4 @@
 - [x] 사이트 제목(.site-title) 글씨를 굵게(font-weight: 700) 변경
 - [x] Transformer 글 추가 내용(Feed Forward, Add & Norm) 커밋·push, 배포 확인
 - [x] 사용자가 올린 아키텍처 이미지(`Transfomer Architecture img.png`)를 Transformer 글에 삽입, 커밋·push, 배포 확인
+- [x] 이미지 크기 축소(max-width: 500px), 커밋·push, 배포 확인

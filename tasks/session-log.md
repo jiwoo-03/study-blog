@@ -26,3 +26,4 @@
 - 사이트 제목 글씨를 굵게(font-weight: 700) 변경, 빌드 확인 후 커밋·push
 - Transformer 글 추가 내용(Feed Forward, Add & Norm) push, 배포 확인
 - 사용자가 "assets/Transformer Architecture img.png"를 올렸다고 했으나 처음엔 찾지 못함 — 결국 `assets/images/Transfomer Architecture img.png`(오타 포함 실제 파일명)로 확인, Transformer 글에 이미지 삽입(baseurl + URL 인코딩) 후 커밋·push, 배포 확인
+- 이미지 크기 축소 요청 → markdown 이미지 문법을 HTML `<img>` 태그로 바꿔 `style="max-width: 500px"` 적용, 커밋·push, 배포 확인
