@@ -24,3 +24,5 @@
 - 사용자 피드백: 글씨색이 아니라 header 영역(경계선 안쪽) 배경을 버건디로 원함 → `.site-header`에 배경색 적용, 글씨/nav/모바일 메뉴 아이콘은 흰색으로 대비 조정, 커밋·push
 - 사용자가 브라우저 캐시 때문에 변경이 안 보인다고 함 → curl로 서버/CDN은 이미 최신임을 캐시 우회(쿼리스트링)로 확인, 강력 새로고침/시크릿 창 안내
 - 사이트 제목 글씨를 굵게(font-weight: 700) 변경, 빌드 확인 후 커밋·push
+- Transformer 글 추가 내용(Feed Forward, Add & Norm) push, 배포 확인
+- 사용자가 "assets/Transformer Architecture img.png"를 올렸다고 했으나 처음엔 찾지 못함 — 결국 `assets/images/Transfomer Architecture img.png`(오타 포함 실제 파일명)로 확인, Transformer 글에 이미지 삽입(baseurl + URL 인코딩) 후 커밋·push, 배포 확인

@@ -19,3 +19,5 @@
 - `_posts/` 안에 하위 폴더를 만들어도 permalink(URL)에는 전혀 반영되지 않는다 — 순수하게 소스 파일 정리용. 실제 테스트(폴더에 글 하나 넣고 build)로 확인함.
 - minima 테마에서 디자인(색상 등)을 바꿀 때는 site 루트에 `assets/main.scss`를 새로 만들어 `@import "minima";` 뒤에 원하는 선택자(예: `.site-title`)를 재정의하면 된다 — gem이 제공하는 기본 main.scss를 site 쪽 파일이 자동으로 덮어쓰는 Jekyll의 theme-gem 동작을 이용. CSS 캐스케이드상 같은 specificity면 나중에 선언된 규칙이 이기므로, `@import` 뒤에 커스텀 규칙을 적어야 한다.
 - "글씨에 색을 입혀달라"와 "글씨 주변 배경(경계선 안쪽)에 색을 입혀달라"는 다른 요청이다 — color vs background-color, 그리고 어떤 요소(.site-title vs .site-header)를 대상으로 하는지 헷갈리기 쉽다. 배경색을 바꿀 때는 글씨와의 대비(contrast)도 같이 맞춰줘야 한다 (흰 글씨 등) — 그 영역 안의 nav 링크, 모바일 메뉴 아이콘 색도 함께 체크해야 안 보이는 요소가 없다.
+- 사용자가 업로드한 파일명을 말로 전달할 때 오타(Transformer→Transfomer)나 경로 혼동(assets/ vs assets/images/)이 흔하다. 파일을 찾을 수 없을 땐 바로 못 찾았다고 보고하고, 유사한 이름으로 추측해서 아무 파일이나 쓰지 않는다 — 이미지/콘텐츠 파일은 잘못 집으면 엉뚱한 내용이 올라간다.
+- Markdown 이미지 경로에 파일명 공백이 있으면 URL 인코딩(`%20`)해야 하고, 사이트가 서브경로(baseurl)에 있으면 `{{ site.baseurl }}`을 반드시 붙여야 한다.
