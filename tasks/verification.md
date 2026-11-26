@@ -28,4 +28,14 @@
 - 재빌드 전 `_site`에 `CLAUDE.md`, `README.md`, `tasks/*.md`가 그대로 복사되어 공개 노출되고 있음을 확인
 - `_config.yml`에 `exclude: [CLAUDE.md, README.md, tasks/]` 추가
 - `_site` 삭제 후 재빌드하여 해당 파일들이 결과물에서 빠진 것을 확인 (`ls _site`에 404.html/about/assets/feed.xml/index.html/jekyll만 남음)
-- 재검증 필요 항목: push 후 실제 배포본에서 `/CLAUDE.md`, `/README.md`, `/tasks/todo.md` 등 접근 시 404 확인
+- 배포본 확인 완료: `/CLAUDE.md`, `/README.md`, `/tasks/todo.md` 모두 404 (curl)
+
+## 2026-11-26 — Sveltia CMS + Cloudflare Workers OAuth 세팅
+- `~/sveltia-cms-auth` 클론, `npm install`, `npx wrangler login`(사용자), `npx wrangler whoami`로 로그인 확인
+- Cloudflare 계정에 workers.dev 서브도메인이 없어 첫 `wrangler deploy` 실패 — 대시보드에서 더미 Worker(`study-blog`) 생성으로 서브도메인(`jiwoo7914.workers.dev`) 등록 후 재배포 성공
+- GitHub App("Sveltia CMS Auth for study-blog") 생성 (Redirect URI: `https://sveltia-cms-auth.jiwoo7914.workers.dev/callback`, Contents/PR 권한 read-write), `study-blog` 저장소에 설치
+- `wrangler secret put`으로 `GITHUB_CLIENT_ID`, `ALLOWED_DOMAINS=jiwoo-03.github.io` 설정 (제가 실행), `GITHUB_CLIENT_SECRET`은 사용자가 Cloudflare 대시보드에서 직접 설정
+- `wrangler secret list`로 3개 secret 모두 존재 확인
+- `admin/index.html`, `admin/config.yml` 추가 (backend: github, repo: jiwoo-03/study-blog, base_url: Worker URL), `jekyll build`로 `_site/admin/`에 정상 포함 확인 후 push
+- 배포 확인: `https://jiwoo-03.github.io/study-blog/admin/` 200 OK
+- 재검증 필요 항목: 사용자가 실제로 `/admin/`에서 GitHub 로그인 버튼을 눌러 로그인 및 글 작성·커밋까지 되는지 end-to-end 테스트 (GitHub App 설치/권한 문제는 API로 검증 불가능해 실제 로그인으로만 확인 가능)

@@ -12,3 +12,4 @@
 - `_config.yml` 실제 값 채움, git 초기화 및 첫 커밋, `gh`로 GitHub 저장소(jiwoo-03/study-blog) public 생성 및 push, GitHub Pages 활성화
 - 배포 완료 확인 (https://jiwoo-03.github.io/study-blog/ → 200 OK)
 - CLAUDE.md/README.md/tasks/가 _site에 노출되던 문제 발견, `_config.yml` exclude로 차단 후 재빌드 검증
+- Sveltia CMS + sveltia-cms-auth(Cloudflare Workers, GitHub App OAuth) 세팅: Worker 배포, GitHub App 생성·설치, secret 설정, admin/ 추가 및 배포 완료 (https://jiwoo-03.github.io/study-blog/admin/ → 200 OK)

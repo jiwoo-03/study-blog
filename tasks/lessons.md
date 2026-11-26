@@ -9,3 +9,7 @@
 - GitHub 계정에 "이메일 비공개(Keep my email address private)" 설정이 켜져 있으면, 실제 이메일로 커밋한 내용을 GitHub가 push 단계에서 `GH007` 에러로 거부한다. 커밋 작성자 이메일은 `<github-user-id>+<username>@users.noreply.github.com` 형식의 noreply 이메일로 설정해야 한다 (`gh api user --jq '.id, .login'`으로 id 조회).
 - GitHub Pages를 `<username>.github.io`가 아닌 일반 저장소 이름(예: study-blog)으로 만들면 "프로젝트 페이지"가 되어, `_config.yml`의 `baseurl`을 `/저장소이름`으로 설정해야 사이트 내 링크가 올바르게 생성된다.
 - Jekyll은 front matter가 없어도 저장소 루트의 마크다운 파일(README.md 등)을 기본적으로 `_site`에 그대로 복사해 배포한다. 블로그 콘텐츠가 아닌 관리용 파일(README.md, CLAUDE.md, tasks/ 등)은 `_config.yml`의 `exclude:`에 명시적으로 추가해야 공개 사이트에 노출되지 않는다.
+- Decap CMS는 혼자 쓰는 개인 블로그엔 과한 경우가 많다. Decap과 설정 포맷이 거의 동일하면서 더 활발히 유지보수되는 **Sveltia CMS**가 있고, 1인 사용자는 OAuth 설정 없이 "Personal Access Token 로그인"만으로도 충분하다 — 다만 이번엔 사용자가 "한 번 설정해두고 이후 편하게" 쪽(OAuth)을 선택함.
+- Cloudflare Workers를 그 계정에서 처음 쓸 때는 `*.workers.dev` 서브도메인을 먼저 등록해야 하며, 이는 CLI(`wrangler deploy`)만으로는 안 되고 대시보드에서 Worker를 하나(더미여도 무방) 생성하는 과정 중에 등록된다.
+- GitHub App 생성 시 Client Secret처럼 민감한 값은 사용자가 채팅에 붙여넣지 않고 Cloudflare 대시보드(Workers 설정 > Variables and Secrets)에 직접 입력하도록 안내한다 — 대화 로그에 비밀값이 남지 않게 하기 위함. Client ID는 공개值이라 공유해도 무방.
+- Sveltia CMS 설정 시 흔한 실수: `<script>` 태그에 `type="module"` 속성을 붙이거나 존재하지 않는 CSS `<link>`를 추가하는 것(공식 문서가 AI 에이전트들이 자주 하는 실수로 지적함) — 둘 다 불필요하며 오히려 오동작을 유발할 수 있다. 스크립트 버전도 고정하지 않고 unpkg 비버전 URL을 쓰는 게 권장된다.
