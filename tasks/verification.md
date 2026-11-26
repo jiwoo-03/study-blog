@@ -64,3 +64,5 @@
 - site 루트 `assets/main.scss` 생성 (`@import "minima"` 뒤 커스텀 규칙) → 1차로 `.site-title` 글자색을 버건디(#7b1e3a)로, 빌드 결과 CSS에서 커스텀 규칙이 minima 기본 규칙보다 나중에 선언돼 우선 적용됨을 확인 후 push, 배포 확인(curl로 main.css에 7b1e3a 포함 확인)
 - 사용자 피드백으로 의도가 "글자색"이 아니라 "header 영역(경계선 안쪽) 배경색"임을 확인 → `.site-header`에 `background-color: #7b1e3a` 적용, 대비를 위해 `.site-title`/`.site-nav .page-link`/모바일 메뉴 아이콘을 흰색으로 변경
 - 재빌드로 `_site/assets/main.css`에 `.site-header { background-color: #7b1e3a; }` 반영 확인 후 push
+- 사용자가 "변경이 안 보인다"고 함 → `curl`로 캐시 우회 쿼리스트링(`?v=timestamp`) 붙여 재조회, 서버/CDN에는 이미 최신 CSS가 반영되어 있음을 확인 (브라우저 캐시 문제로 결론)
+- `.site-title`에 `font-weight: 700` 추가, 로컬 빌드로 반영 확인 후 push, 배포본 캐시 우회 조회로 `font-weight:700` 포함 확인
