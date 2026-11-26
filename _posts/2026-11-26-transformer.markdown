@@ -6,7 +6,9 @@ date: 2026-11-26
 # Transformer Arvhitecture
 Transformer는 Attention만으로 만든 번역 모델로써, 2017년 구글 연구팀의 논문 **"Attention is All You Need"**에서 처음 제안됐다.
 
-## Encoder & Decoder 
+![Transformer Architecture]({{ site.baseurl }}/assets/images/Transfomer%20Architecture%20img.png)
+
+## Encoder & Decoder
 
 ### Encoder
 **인코더란 Input으로 들어온 데이터를 컴퓨터가 이해할 수 있는 Tensor 형태로 변환하는 곳**으로써 쉽게 말하면 번역 과정에서 컴퓨터가 원문을 읽고 이해하는 단계이다.
