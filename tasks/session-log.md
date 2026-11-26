@@ -30,3 +30,4 @@
 - 추가로 더 축소(350px) 및 가운데 정렬(`display:block; margin:0 auto`) 요청 반영, 커밋·push, 배포 확인
 - 이미지 주변 흰색 여백을 글 칸 너비에 맞게 늘려달라는 요청 → 이미지를 `<div style="background:#fff; padding:32px 0; text-align:center">`로 감싸는 방식으로 반영, 커밋·push, 배포 확인
 - 사용자가 글에 "Tansformer Encoder img.png" 플레이스홀더(blockquote)를 직접 추가해둠 — 아직 이미지 미업로드, 다음에 업로드하면 삽입 필요
+- 사용자가 Figure 1(Encoder), Figure 2(Decoder) 이미지 업로드 → 각 플레이스홀더 바로 아래에 동일한 패딩 박스 스타일로 삽입, 커밋·push, 배포 확인

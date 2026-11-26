@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: 아키텍처 이미지 주변에 글 칸 너비만큼의 흰색 패딩 박스 추가, push 및 배포 확인 완료
-- 다음 작업: 사용자가 Encoder 섹션용 이미지("Tansformer Encoder img.png")를 업로드하면 삽입
+- 최근 완료: Encoder/Decoder 섹션에 Figure 1·2 이미지 삽입, push 및 배포 확인 완료 (Transformer 글의 이미지 3개 모두 반영됨)
+- 다음 작업: 사용자 지정 없음
 - 보류/이슈: (아직 없음)
