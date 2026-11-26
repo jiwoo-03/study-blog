@@ -21,3 +21,4 @@
 - [x] Transformer 글 추가 내용(Feed Forward, Add & Norm) 커밋·push, 배포 확인
 - [x] 사용자가 올린 아키텍처 이미지(`Transfomer Architecture img.png`)를 Transformer 글에 삽입, 커밋·push, 배포 확인
 - [x] 이미지 크기 축소(max-width: 500px), 커밋·push, 배포 확인
+- [x] 이미지 추가 축소(max-width: 350px) 및 가운데 정렬, 커밋·push, 배포 확인
