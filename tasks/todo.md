@@ -24,3 +24,5 @@
 - [x] 이미지 추가 축소(max-width: 350px) 및 가운데 정렬, 커밋·push, 배포 확인
 - [x] 이미지 주변 흰색 패딩을 글 칸(content column) 너비에 맞게 추가, 커밋·push, 배포 확인
 - [x] Encoder/Decoder 섹션 플레이스홀더에 Figure 1(Encoder), Figure 2(Decoder) 이미지 삽입, 커밋·push, 배포 확인
+- [x] 사용자가 Figure 이미지 크기(320px) 직접 조정 → 커밋·push
+- [x] 첫 소개글("블로그를 시작합니다", hello.markdown) 삭제, 커밋·push, 배포 확인(404)
