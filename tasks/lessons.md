@@ -14,3 +14,4 @@
 - GitHub App 생성 시 Client Secret처럼 민감한 값은 사용자가 채팅에 붙여넣지 않고 Cloudflare 대시보드(Workers 설정 > Variables and Secrets)에 직접 입력하도록 안내한다 — 대화 로그에 비밀값이 남지 않게 하기 위함. Client ID는 공개 값이라 공유해도 무방.
 - Sveltia CMS 설정 시 흔한 실수: `<script>` 태그에 `type="module"` 속성을 붙이거나 존재하지 않는 CSS `<link>`를 추가하는 것(공식 문서가 AI 에이전트들이 자주 하는 실수로 지적함) — 둘 다 불필요하며 오히려 오동작을 유발할 수 있다. 스크립트 버전도 고정하지 않고 unpkg 비버전 URL을 쓰는 게 권장된다.
 - CMS/OAuth 연동처럼 외부 계정(Cloudflare, GitHub App)에 여러 리소스를 만드는 작업은, 막상 다 세팅해놓고 보면 사용자가 "굳이 이렇게까지 안 해도 됐다"고 되돌릴 수 있다. 되돌릴 때는 ① 블로그 저장소 내 변경(admin/) 되돌리기, ② 외부에 만든 리소스(Worker, GitHub App) 정리까지 둘 다 챙겨야 한다 — 전자만 하고 후자를 빠뜨리면 안 쓰는 리소스가 계정에 남는다. GitHub App 자체의 삭제는 API로 불가능해 사용자가 웹사이트에서 직접 해야 한다(Advanced 탭 > Danger zone).
+- Jekyll의 기본 permalink 스타일(`date`)은 `/:categories/:year/:month/:day/:title.html`이라 front matter에 한글 `categories`를 쓰면 URL 경로에 한글이 그대로 들어간다. `_config.yml`에 `permalink: /:year/:month/:day/:title/`처럼 `:categories`를 뺀 패턴을 지정해야 깔끔한 URL이 된다.
