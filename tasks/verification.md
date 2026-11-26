@@ -53,3 +53,8 @@
 - `_config.yml`에 `permalink: /:year/:month/:day/:title/` 추가 후 재빌드, `/2026/11/26/hello/` 형태로 정상 생성 확인
 - 사용자 확인 후 Jekyll 기본 샘플 글(`2026-11-26-welcome-to-jekyll.markdown`) 삭제, 재빌드로 결과물에서 빠진 것 확인
 - push 후 배포 확인: `https://jiwoo-03.github.io/study-blog/2026/11/26/hello/` curl 응답 200 OK
+
+## 2026-11-26 — Transformer 글 커밋/push
+- `_posts/Transformer.markdown`(날짜 없는 파일명, front matter 없음)로는 `jekyll build` 성공해도 `_site`에 전혀 생성되지 않음을 확인 (조용히 무시됨)
+- `2026-11-26-transformer.markdown`으로 리네임 + front matter(layout: post, title, date) 추가 후 재빌드, `_site/2026/11/26/transformer` 생성 확인
+- 배포 확인 완료: `https://jiwoo-03.github.io/study-blog/2026/11/26/transformer/` curl 응답 200 OK

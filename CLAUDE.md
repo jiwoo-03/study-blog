@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: 첫 글("블로그를 시작합니다") 작성·push, 배포 확인 (https://jiwoo-03.github.io/study-blog/2026/11/26/hello/), permalink를 깔끔한 날짜 형식으로 정리, Jekyll 기본 샘플 글 삭제
-- 다음 작업: 사용자 지정 없음 — 필요 시 `_posts/`에 새 글 추가부터 시작 가능
+- 최근 완료: 사용자가 작성한 "Transformer" 글(파일명에 날짜 없어 Jekyll이 무시하던 문제) 수정 후 커밋·push, 배포 확인 (https://jiwoo-03.github.io/study-blog/2026/11/26/transformer/)
+- 다음 작업: 사용자 지정 없음 — 필요 시 `_posts/`에 새 글 추가부터 시작 가능 (파일명은 반드시 YYYY-MM-DD-제목.md 형식)
 - 보류/이슈: (아직 없음)

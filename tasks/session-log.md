@@ -15,3 +15,4 @@
 - Sveltia CMS + sveltia-cms-auth(Cloudflare Workers, GitHub App OAuth) 세팅: Worker 배포, GitHub App 생성·설치, secret 설정, admin/ 추가 및 배포 완료 (https://jiwoo-03.github.io/study-blog/admin/ → 200 OK)
 - 사용자 판단으로 CMS 도입을 되돌리기로 결정 — admin/ 제거 후 push, Cloudflare Worker 2개 삭제, 로컬 클론 삭제, GitHub App 삭제(사용자 직접)까지 전부 정리 완료. md 파일을 직접 작성해 push하는 원래 방식으로 복귀
 - 첫 글("블로그를 시작합니다") 작성 및 push, permalink 형식을 `/:year/:month/:day/:title/`로 정리(한글 카테고리가 URL에 들어가는 문제 해결), Jekyll 기본 샘플 글 삭제
+- 사용자가 직접 만든 `_posts/Transformer.markdown`이 날짜 없는 파일명 때문에 Jekyll에 무시되는 문제 발견 → `2026-11-26-transformer.markdown`으로 리네임, front matter 추가 후 커밋·push

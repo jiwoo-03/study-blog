@@ -11,3 +11,4 @@
 - [x] 사용자 판단으로 Sveltia CMS 되돌리기 결정 — admin/ 제거, md 파일 직접 작성·push하는 원래 방식으로 복귀
 - [x] 더 이상 쓰지 않는 외부 리소스 정리 (Cloudflare Worker 2개, GitHub App)
 - [x] 첫 글("블로그를 시작합니다") 작성, permalink를 /:year/:month/:day/:title/ 형식으로 정리, Jekyll 샘플 글 삭제
+- [x] 사용자가 작성한 "Transformer.markdown" 파일명·front matter 수정 후 커밋·push
