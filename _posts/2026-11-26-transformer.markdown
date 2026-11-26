@@ -25,7 +25,7 @@ Transformer의 Encoder에는 담은 과 같은 시스템이 작용한다.
 
 > Tansformer Encoder img.png
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
-  <img src="{{ site.baseurl }}/assets/images/Transformer%20Encoder%20img(Figure%201).png" alt="Transformer Encoder (Figure 1)" style="max-width: 350px; width: 100%;" />
+  <img src="{{ site.baseurl }}/assets/images/Transformer%20Encoder%20img(Figure%201).png" alt="Transformer Encoder (Figure 1)" style="max-width: 320px; width: 100%;" />
 </div>
 
 
@@ -43,7 +43,7 @@ Decoder에서는 다음과 같은 시스템이 작용한다.
 
 > Transformer Decoder img.png
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
-  <img src="{{ site.baseurl }}/assets/images/Transformer%20Decoder%20img(Figure%202).png" alt="Transformer Decoder (Figure 2)" style="max-width: 350px; width: 100%;" />
+  <img src="{{ site.baseurl }}/assets/images/Transformer%20Decoder%20img(Figure%202).png" alt="Transformer Decoder (Figure 2)" style="max-width: 320px; width: 100%;" />
 </div>
 
 
