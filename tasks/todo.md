@@ -8,4 +8,5 @@
 - [x] GitHub Pages 실제 배포 URL(https://jiwoo-03.github.io/study-blog/) 접속 확인
 - [x] CLAUDE.md/README.md/tasks/ 관리 파일이 빌드 결과물(_site)에 노출되지 않도록 `_config.yml` exclude 처리
 - [x] Sveltia CMS 세팅 (/admin 글쓰기 UI, GitHub App OAuth 연동 via Cloudflare Workers)
-- [ ] /admin 접속 후 GitHub 로그인 및 실제 글 작성·커밋 테스트 (사용자 확인 필요)
+- [x] 사용자 판단으로 Sveltia CMS 되돌리기 결정 — admin/ 제거, md 파일 직접 작성·push하는 원래 방식으로 복귀
+- [x] 더 이상 쓰지 않는 외부 리소스 정리 (Cloudflare Worker 2개, GitHub App)

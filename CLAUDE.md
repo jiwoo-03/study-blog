@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: Sveltia CMS(/admin) 세팅 완료 — Cloudflare Workers(sveltia-cms-auth)로 GitHub App OAuth 연동, 배포 확인 (https://jiwoo-03.github.io/study-blog/admin/)
-- 다음 작업: 사용자가 /admin에서 실제 로그인·글 작성 테스트
+- 최근 완료: 사용자 판단으로 Sveltia CMS 도입 되돌림 — admin/ 제거·push, Cloudflare Worker 2개·로컬 클론·GitHub App 전부 삭제 완료. 블로그는 md 파일 직접 작성 후 push하는 원래 방식으로 복귀 (배포본 /admin/ 404 확인)
+- 다음 작업: 사용자 지정 없음 — 필요 시 `_posts/`에 새 글 작성부터 시작 가능
 - 보류/이슈: (아직 없음)

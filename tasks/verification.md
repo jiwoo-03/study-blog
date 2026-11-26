@@ -39,3 +39,11 @@
 - `admin/index.html`, `admin/config.yml` 추가 (backend: github, repo: jiwoo-03/study-blog, base_url: Worker URL), `jekyll build`로 `_site/admin/`에 정상 포함 확인 후 push
 - 배포 확인: `https://jiwoo-03.github.io/study-blog/admin/` 200 OK
 - 재검증 필요 항목: 사용자가 실제로 `/admin/`에서 GitHub 로그인 버튼을 눌러 로그인 및 글 작성·커밋까지 되는지 end-to-end 테스트 (GitHub App 설치/권한 문제는 API로 검증 불가능해 실제 로그인으로만 확인 가능)
+
+## 2026-11-26 — Sveltia CMS 되돌리기 및 외부 리소스 정리
+- 사용자가 CMS 없이 md 파일을 직접 작성해 push하는 원래 방식이 더 낫다고 판단, 되돌리기로 결정
+- `git rm -r admin` → 커밋·push 완료, 배포본에서 `/admin/`이 다시 빠짐 (더 이상 접근 불가 — 의도한 결과)
+- `npx wrangler delete`로 `sveltia-cms-auth`, `study-blog` Worker 둘 다 삭제 ("Successfully deleted" 확인)
+- 로컬에 클론해둔 `~/sveltia-cms-auth` 폴더 `rm -rf`로 삭제, `ls`로 삭제 확인
+- GitHub 웹사이트에서 사용자가 "Sveltia CMS Auth for study-blog" GitHub App 삭제 완료 (API로는 앱 자체 삭제가 불가능해 사용자가 직접 수행)
+- 최종 확인: `https://jiwoo-03.github.io/study-blog/admin/` curl 응답 404 (정상 — admin 제거가 배포에 반영됨)
