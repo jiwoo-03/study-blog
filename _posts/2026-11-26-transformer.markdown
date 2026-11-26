@@ -3,9 +3,10 @@ layout: post
 title: "Transformer Model"
 date: 2026-11-26
 ---
-# Transformer Arvhitecture
+# Transformer Architecture
 Transformer는 Attention만으로 만든 번역 모델로써, 2017년 구글 연구팀의 논문 **"Attention is All You Need"**에서 처음 제안됐다.
 
+> Transformer Architecture image
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/Transfomer%20Architecture%20img.png" alt="Transformer Architecture" style="max-width: 350px; width: 100%;" />
 </div>
@@ -22,7 +23,11 @@ Transformer의 Encoder에는 담은 과 같은 시스템이 작용한다.
 - `Add & Norm`
 - `Feed Forward`
 
-> Tansformer Encoder img.png 
+> Tansformer Encoder img.png
+<div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
+  <img src="{{ site.baseurl }}/assets/images/Transformer%20Encoder%20img(Figure%201).png" alt="Transformer Encoder (Figure 1)" style="max-width: 350px; width: 100%;" />
+</div>
+
 
 ### Decoder
 **디코더는 인코더에서 컴퓨터가 이해할수 있는 언어로 변환된 데이터들을 다시 사람이 이해할 수 있는 데이터로 변환 시켜 출력하는 곳**을 만한다. 번역의 과정에서는 번역문을 쓰는 단계라고 생각하면 쉽다.
@@ -36,7 +41,11 @@ Decoder에서는 다음과 같은 시스템이 작용한다.
 - `Feed Forward`
 - `Linear and Softmax`
 
-> Transformer Decoder img.png 
+> Transformer Decoder img.png
+<div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
+  <img src="{{ site.baseurl }}/assets/images/Transformer%20Decoder%20img(Figure%202).png" alt="Transformer Decoder (Figure 2)" style="max-width: 350px; width: 100%;" />
+</div>
+
 
 ## Attention 
 일단 먼저 Transformer를 알기전 가장 먼저 할 일은 Transformer에서 가장 중요한 단계인 `Attention`에 대해서 알아야한다.
