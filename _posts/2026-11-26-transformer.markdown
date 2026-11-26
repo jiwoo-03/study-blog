@@ -1,12 +1,12 @@
 ---
-layout: post
+layout: single
 title: "Transformer Model"
 date: 2026-11-26
 ---
 # Transformer Architecture
 Transformer는 Attention만으로 만든 번역 모델로써, 2017년 구글 연구팀의 논문 **"Attention is All You Need"**에서 처음 제안됐다.
 
-> Transformer Architecture image
+> Transformer Architecture
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/Transfomer%20Architecture%20img.png" alt="Transformer Architecture" style="max-width: 350px; width: 100%;" />
 </div>
@@ -23,7 +23,7 @@ Transformer의 Encoder에는 담은 과 같은 시스템이 작용한다.
 - `Add & Norm`
 - `Feed Forward`
 
-> Tansformer Encoder img.png
+> Tansformer Encoder 
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/Transformer%20Encoder%20img(Figure%201).png" alt="Transformer Encoder (Figure 1)" style="max-width: 320px; width: 100%;" />
 </div>
@@ -41,7 +41,7 @@ Decoder에서는 다음과 같은 시스템이 작용한다.
 - `Feed Forward`
 - `Linear and Softmax`
 
-> Transformer Decoder img.png
+> Transformer Decoder
 <div style="background-color: #ffffff; padding: 32px 0; text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/Transformer%20Decoder%20img(Figure%202).png" alt="Transformer Decoder (Figure 2)" style="max-width: 320px; width: 100%;" />
 </div>
@@ -102,3 +102,5 @@ Input 과 Output에 들어가는 문장 sequence에 **위치 정보를 주는 �
 ### Normalization
 `Residual`로 계속 더하다 보면 값이 폭주하는 현상이 발현되고 그걸 막기 위해 정규화 작업을 거칩니다. 
 
+
+[2017년 구글 연구 팀 발표 : Attention All You Need ](https://arxiv.org/pdf/1706.03762v7)

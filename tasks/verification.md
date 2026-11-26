@@ -70,3 +70,16 @@
 ## 2026-11-26 — Transformer 글 추가 내용 push
 - 로컬 빌드가 평소보다 오래 걸림(24초, OneDrive 동기화 폴더 I/O 지연 추정) — 백그라운드로 넘어갔지만 정상 완료(exit 0), `_site` 생성 확인
 - 커밋·push 후 curl로 배포본에 새 내용("Residual" 키워드) 포함 확인
+
+## 2026-11-26 — 테마 전환 (Minima → minimal-mistakes)
+- `bundle install` 성공 (jekyll-remote-theme, jekyll-include-cache 포함 40 gems) — libssl-dev 설치 후 재시도로 해결
+- `bundle exec jekyll build` 성공 (에러 없음, Sass 쪽 deprecation 경고만 있음 — 테마 자체의 구버전 문법 때문이며 빌드 실패 아님)
+- 빌드 결과물(`_site`) 구조 확인: `index.html`, `about/`, `404.html`, `2026/11/26/transformer/`, `assets/css/main.css`, `feed.xml`만 생성됨 — 의도치 않은 카테고리 페이지 등 추가 생성 없음
+- `_site/assets/css/main.css`에 커스텀 배색(`#7b1e3a`)이 정상 포함됨을 grep으로 확인
+- `bundle exec jekyll serve`로 로컬 서버 구동 후 Playwright(`npx playwright screenshot`)로 스크린샷 촬영·육안 확인:
+  - 데스크톱(1280px) 홈: 버건디 헤더, 흰 글씨 "study-blog"/"Home"/"About", Recent Posts에 Transformer 글 정상 표시
+  - 데스크톱(1280px) 포스트: 제목/본문/목차용 헤딩/리스트/이미지 3장/읽기 시간/업데이트 날짜 모두 정상 렌더링
+  - 모바일(390px) 홈·포스트: 반응형으로 1단 레이아웃 전환, 헤더 배색 유지, 텍스트 깨짐이나 가로 스크롤 없음
+  - (최초 스크린샷에서 전체 화면이 흐릿하게 찍힌 현상 발견 → 테마의 fade-in 애니메이션 타이밍 문제로 확인, `--wait-for-timeout=1500` 추가 후 정상 확인됨 — 실제 버그 아님)
+- `git status`로 변경 범위 확인: `404.html`, `Gemfile`, `Gemfile.lock`, `_config.yml`, `_posts/2026-11-26-transformer.markdown`, `about.markdown` 수정, `assets/main.scss` → `assets/css/main.scss` rename, `_data/navigation.yml` 신규 — 의도하지 않은 변경 없음, `_site`/`.jekyll-cache` 등 빌드 산출물은 gitignore로 깔끔
+- 미검증(다음에 필요): 실제 GitHub Pages 배포 후(push 이후) 같은 확인을 배포 URL에서 재확인 — 로컬 `remote_theme` 다운로드가 GitHub Pages 빌드 환경에서도 동일하게 성공하는지는 push 전까지 보장 안 됨

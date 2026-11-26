@@ -33,3 +33,15 @@
 - 사용자가 Figure 1(Encoder), Figure 2(Decoder) 이미지 업로드 → 각 플레이스홀더 바로 아래에 동일한 패딩 박스 스타일로 삽입, 커밋·push, 배포 확인
 - 사용자가 Figure 이미지 크기를 320px로 직접 조정 → 커밋·push
 - 첫 소개글(hello.markdown) 삭제 요청 → `git rm` 후 커밋·push, 배포본에서 404 확인
+- 사용자가 다른 사람도 글을 쓸 수 있는지, 사이트 내에서 직접 글을 쓸 수 있는지 질문 → GitHub 협업자/PR 방식, GitHub 웹 에디터, Decap CMS 등 옵션 설명 (실행은 안 함)
+- 사용자가 참고 블로그(So Simple 테마)를 보고 상단 카테고리/About 메뉴 구성법을 질문 → Minima 기준 about 페이지/카테고리 페이지 작성법 설명
+- Minima가 무엇인지, 다른 테마는 어디서 찾는지 질문에 답변 (jekyllrb.com/docs/themes, pages.github.com/themes 등 안내)
+- 사용자가 minimal-mistakes 테마로 전환 요청 → 스킨은 "default"로 확인 후 진행
+  - `_config.yml`: `theme: minima` → `remote_theme: "mmistakes/minimal-mistakes"` + `minimal_mistakes_skin: "default"`, `jekyll-remote-theme`/`jekyll-include-cache` 플러그인 추가, posts/pages `defaults`(layout: single, author_profile 등) 추가
+  - `Gemfile`: `minima` 제거, `jekyll-remote-theme`/`jekyll-include-cache` 추가
+  - `_data/navigation.yml` 신규 생성 (Home, About만 — 카테고리 페이지는 이번 범위에 포함 안 함)
+  - `about.markdown`, `404.html`, `_posts/2026-11-26-transformer.markdown`의 `layout`을 minimal-mistakes에 맞게 수정 (`page`/`post` → `single`)
+  - 기존 `assets/main.scss`(버건디 헤더 커스텀 배색)를 minimal-mistakes가 실제로 로드하는 `assets/css/main.scss`로 이동, `@import "minima"` → `@import "minimal-mistakes/skins/..."` + `@import "minimal-mistakes"`로 교체, 선택자도 Minima 전용(`.site-header`, `.site-nav .page-link` 등)에서 minimal-mistakes 전용(`.greedy-nav`, `.visible-links .masthead__menu-item a`, `.navicon`)으로 재매핑
+  - 로컬 환경에 OpenSSL 개발 헤더 부재로 `bundle install` 실패 → 사용자가 `sudo apt-get install -y libssl-dev pkg-config` 직접 실행 후 해결
+  - `bundle exec jekyll build`/`serve`로 로컬 검증, Playwright로 데스크톱(1280px)·모바일(390px) 스크린샷 촬영해 홈/포스트 페이지 레이아웃과 배색이 정상임을 시각 확인
+  - 아직 커밋·push는 하지 않음 (사용자 승인 대기)
