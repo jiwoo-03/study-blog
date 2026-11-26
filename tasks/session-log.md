@@ -9,3 +9,6 @@
 - CLAUDE.md에 "작업 전 사용자 허락 구하기" 규칙 추가
 - Ruby/Jekyll/Bundler 설치 (sudo apt install은 사용자가 직접 실행), `jekyll new`로 사이트 생성, `bundle install` 및 `jekyll build` 검증 완료
 - `~/.bashrc`에 gem bin PATH 영구 등록
+- `_config.yml` 실제 값 채움, git 초기화 및 첫 커밋, `gh`로 GitHub 저장소(jiwoo-03/study-blog) public 생성 및 push, GitHub Pages 활성화
+- 배포 완료 확인 (https://jiwoo-03.github.io/study-blog/ → 200 OK)
+- CLAUDE.md/README.md/tasks/가 _site에 노출되던 문제 발견, `_config.yml` exclude로 차단 후 재빌드 검증

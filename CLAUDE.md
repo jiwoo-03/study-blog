@@ -48,6 +48,6 @@
 
 ## 현재 상태
 
-- 최근 완료: `~/.bashrc`에 gem bin PATH 영구 등록, 새 쉘에서 `bundle exec jekyll -v` 정상 동작 확인
-- 다음 작업: `_config.yml`의 title/email/description 실제 값으로 채우기, GitHub 저장소 생성 및 배포
-- 보류/이슈: (아직 없음)
+- 최근 완료: CLAUDE.md/README.md/tasks/가 공개 사이트에 노출되던 문제를 `_config.yml` exclude로 차단, 재빌드 검증
+- 다음 작업: Decap CMS 세팅 (admin/config.yml, GitHub OAuth 연동), 위 수정사항 커밋·push
+- 보류/이슈: Decap CMS의 GitHub 백엔드는 OAuth 인증을 중개할 별도 서버(프록시)가 필요함 — 사용자와 방식 상의 필요
