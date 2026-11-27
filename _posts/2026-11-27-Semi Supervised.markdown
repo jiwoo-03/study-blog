@@ -59,3 +59,4 @@ date: 2026-11-27
 
 생성자는 가짜 데이터를 만들고, 판별자는 이것이 진짜인지 가짜인지, 그리고 어떤 클래스인지를 구분하도록 학습한다.
 
+[출처 : https://jaylenhan.tistory.com/entry](https://jaylenhan.tistory.com/entry/AIML-%EC%A4%80%EC%A7%80%EB%8F%84-%ED%95%99%EC%8A%B5-Semi-Supervised-Learning-%ED%8C%8C%ED%97%A4%EC%B3%90-%EB%B3%B4%EA%B8%B0-%EC%A0%95%EC%9D%98-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9E%A5%EB%8B%A8%EC%A0%90-%ED%99%9C%EC%9A%A9-%EB%B6%84%EC%95%BC)
