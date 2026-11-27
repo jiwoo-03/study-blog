@@ -44,6 +44,7 @@ collections:
     permalink: /research/:path/
 
 subtitle: 개인 공부 자료를 정리하는 블로그
+avatar: /assets/images/avatar.png
 
 footer:
   copyright_text: "&copy; 2026 Jude"
