@@ -16,12 +16,15 @@ blockquote {
 }
 
 // Plain text post list (no card background, no image, no divider lines) —
-// title / date+read-time / excerpt, sized and spaced like a typical
-// minimal-mistakes archive list.
+// matches minimal-mistakes' archive list: 700px reading column, left
+// aligned, title 1.25em / date+read-time 0.6em / excerpt 0.75em.
 .pan-post-list {
   --content-height: auto;
   --content-shadow: none;
   --content-margin: 0px !important;
+
+  max-width: 700px;
+  text-align: left;
 
   &__item {
     margin-bottom: 1.5em;
@@ -35,6 +38,7 @@ blockquote {
     padding: 0;
     max-width: 100%;
     background-color: transparent;
+    text-align: left;
   }
 
   h2 {
@@ -43,13 +47,13 @@ blockquote {
   }
 
   .info {
-    font-size: 0.7em;
-    margin: 0 0 0.4em 0;
+    font-size: 0.6em;
+    margin: 0 0 4px 0;
     color: #6f777d;
   }
 
   .desc {
-    font-size: 0.9em;
+    font-size: 0.75em;
     margin: 0;
   }
 }
