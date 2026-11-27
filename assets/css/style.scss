@@ -15,16 +15,41 @@ blockquote {
   display: none;
 }
 
-// Tighten up post list cards: less gap between them, slightly smaller
+// Plain text post list (no card background, no image, no divider lines) —
+// title / date+read-time / excerpt, sized and spaced like a typical
+// minimal-mistakes archive list.
 .pan-post-list {
-  --content-height: 70px;
+  --content-height: auto;
+  --content-shadow: none;
+  --content-margin: 0px !important;
 
   &__item {
-    margin-bottom: 10px;
+    margin-bottom: 1.5em;
+
+    &:hover {
+      --content-shadow: none;
+    }
   }
 
   &--content {
-    padding: 15px;
-    max-width: 90%;
+    padding: 0;
+    max-width: 100%;
+    background-color: transparent;
+  }
+
+  h2 {
+    margin: 0 0 0.25em 0;
+    font-size: 1.25em;
+  }
+
+  .info {
+    font-size: 0.7em;
+    margin: 0 0 0.4em 0;
+    color: #6f777d;
+  }
+
+  .desc {
+    font-size: 0.9em;
+    margin: 0;
   }
 }
