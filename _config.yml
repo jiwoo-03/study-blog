@@ -36,7 +36,7 @@ plugins:
   - jekyll-seo-tag
 
 paginate: 10
-paginate_path: "/blog/page:num/"
+paginate_path: "/page:num/"
 
 subtitle: 개인 공부 자료를 정리하는 블로그
 
@@ -60,8 +60,8 @@ menu:
     link: /resume
     icon: ""
 
-  - text: Blog Posts
-    link: /blog
+  - text: About
+    link: /about
     icon: ""
 
 defaults:

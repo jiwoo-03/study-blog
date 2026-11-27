@@ -2,8 +2,6 @@
 layout: default
 ---
 
-# Jude
+<h1>Blog Posts</h1>
 
-개인 공부 자료를 정리하는 블로그입니다.
-
-소개 글은 추후 작성 예정입니다.
+{% include posts/index.html %}
