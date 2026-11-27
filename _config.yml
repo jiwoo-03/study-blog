@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: study-blog
+title: Jude
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   개인 공부 자료를 정리하는 블로그
@@ -41,7 +41,7 @@ paginate_path: "/blog/page:num/"
 subtitle: 개인 공부 자료를 정리하는 블로그
 
 footer:
-  copyright_text: "&copy; 2026 study-blog"
+  copyright_text: "&copy; 2026 Jude"
 
 menu:
   - text: Home

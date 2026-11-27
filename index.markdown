@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# study-blog
+# Jude
 
 개인 공부 자료를 정리하는 블로그입니다.
 
