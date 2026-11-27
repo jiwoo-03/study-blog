@@ -1,6 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
+
+# study-blog
+
+개인 공부 자료를 정리하는 블로그입니다.
+
+소개 글은 추후 작성 예정입니다.

@@ -100,3 +100,20 @@
 - 같은 과정에서 로고/메뉴 글자가 흰색이 아니라 회색(`#6f777d`)으로 컴파일되고 있었음을 `grep`으로 확인(`$masthead-link-color` 기본값이 `$primary-color`를 따라감) → `$masthead-link-color`/`$masthead-link-color-hover`를 변수로 재정의 후 재빌드, `.greedy-nav a{color:#fff}`로 컴파일됨을 grep으로 확인
 - Playwright로 1920px/1280px/모바일(390px) 재스크린샷 — 헤더 전체 폭 버건디, 로고/메뉴 흰 글씨, 본문은 테마 기본색(재설계 이전 상태)으로 정상 렌더링됨을 육안 확인
 - 아직 미완료: 커밋·push (사용자 승인 대기 중)
+- push 후 재확인 완료: `gh api .../pages/builds/latest`로 커밋 3d5a0e6 기준 `status: built`, `curl`로 홈페이지 200, `.masthead{background-color:#7b1e3a}`/`.greedy-nav a{color:#fff}` 포함 확인
+
+## 2026-11-27 — panthera-jekyll 테마 전환
+- `/mnt/c/Users/jiwoo/OneDrive/바탕 화면/panthera-jekyll-master` 폴더를 읽어 `.gemspec`/README에서 실제 GitHub 저장소(`christianezeani/panthera-jekyll`)와 설정 가능한 변수(`subtitle`, `menu`, `social_icons`, `left_side`, `footer`) 확인
+- `_layouts`(default/post/page), `_includes`(left/header/footer/posts/index/pagination/addons), `_sass` 구조를 읽어 필요한 플러그인(`jekyll-paginate` — paginator 사용, `jekyll-seo-tag` — `{% seo %}` 태그 사용)과 불필요해진 것(`jekyll-include-cache`) 파악
+- `_data/comments.yml`을 의도적으로 생성하지 않아 테마 기본값(Disqus `enabled: true`)이 적용되지 않고 댓글이 꺼진 채로 유지됨을 코드 추적으로 확인(`addons/comments.html`이 `site.data.comments.enabled == true`만 체크)
+- `bundle install` 성공 (jekyll-paginate 1.1.0 추가 설치)
+- `bundle exec jekyll build` 성공, 에러 없음(Sass deprecation 경고만, 테마 자체의 구버전 문법)
+- `_site` 구조 확인: `index.html`, `about/`, `blog/`, `skills-and-offers/`, `contact/`, `resume/`, `2026/11/26/transformer/`, `404.html`, `feed.xml`만 생성됨(의도한 페이지만 존재)
+- `_site/assets` 확인: `css/style.css`(테마 자체 컴파일), `icons/`(90개 PNG), `js/`, `libs/`(jquery, fontawesome 5.9.0)까지 remote_theme를 통해 전부 정상적으로 포함됨을 확인
+- `bundle exec jekyll serve`로 로컬 구동 후 Playwright 스크린샷으로 육안 확인:
+  - 데스크톱(1280px) Home: 블루 사이드바(도시 배경 이미지), STUDY-BLOG 타이틀/서브타이틀, 5개 메뉴, GET IN TOUCH, 우측 상단 기본 아바타, 본문에 한국어 플레이스홀더 소개 정상 표시
+  - 데스크톱(1280px) /blog: Blog Posts 목록에 Transformer Model 카드(기본 썸네일, 날짜, 읽기 시간, 요약) 정상 표시
+  - 데스크톱(1280px) 포스트 상세: 제목/날짜/공유 아이콘(Twitter 등)/본문(이미지 포함) 정상 렌더링
+  - 모바일(390px) Home: 사이드바가 접히고 상단에 햄버거 메뉴 + 타이틀 + 아바타로 전환, 본문 레이아웃 깨짐 없음
+  - 알려진 바닐라 테마 특성(수정하지 않음): 데스크톱에서 사이드바 왼쪽 가장자리에 모바일용 상단 헤더 텍스트가 살짝 겹쳐 보이는 현상 — 커스텀 CSS를 전혀 추가하지 않은 테마 원본 상태에서도 동일하게 나타남(테마 자체 동작)
+- 아직 미완료: 커밋·push (사용자 승인 대기 중)

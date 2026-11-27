@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "Transformer Model"
 date: 2026-11-26
 ---

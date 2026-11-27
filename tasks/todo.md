@@ -32,3 +32,5 @@
 - [x] 배색 재설계 변경사항 커밋·push 및 실제 배포본 확인
 - [x] 사용자 요청으로 배색을 재설계 이전(기존 버건디 헤더 + 테마 기본색)으로 복원, 겸사겸사 "1280px보다 넓은 화면에서 헤더 양옆이 흰색으로 남는" 구조적 버그(배경색이 `.greedy-nav`가 아니라 `.masthead`에 있어야 함) 발견·수정, 로고/메뉴 글자색이 흐린 회색으로 보이던 오래된 버그(`$masthead-link-color` 미지정)도 함께 수정
 - [x] 위 수정사항 커밋·push
+- [x] 사용자가 로컬 바탕화면의 `panthera-jekyll-master` 폴더(포트폴리오형 Jekyll 테마)를 보여주며 이 구조대로 블로그를 바꿔달라고 요청 — minimal-mistakes → panthera-jekyll(remote_theme)로 전면 테마 전환. Home=테마 원형 프로필 스타일, 글 목록은 별도 `/blog` 페이지, Skills & Offers/Contact Me/My Resume는 "추후 작성 예정" 스텁 페이지로 생성, 아바타 없음·색상은 테마 기본(블루) 유지로 진행(사용자 확인 완료)
+- [ ] panthera-jekyll 전환 변경사항 커밋·push (사용자 승인 대기)

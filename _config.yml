@@ -27,30 +27,49 @@ url: "https://jiwoo-03.github.io" # the base hostname & protocol for your site, 
 github_username: jiwoo-03
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
+remote_theme: "christianezeani/panthera-jekyll"
 permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
-  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+subtitle: 개인 공부 자료를 정리하는 블로그
+
+footer:
+  copyright_text: "&copy; 2026 study-blog"
+
+menu:
+  - text: Home
+    link: /
+    icon: ""
+
+  - text: Skills & Offers
+    link: /skills-and-offers
+    icon: ""
+
+  - text: Contact Me
+    link: /contact
+    icon: ""
+
+  - text: My Resume
+    link: /resume
+    icon: ""
+
+  - text: Blog Posts
+    link: /blog
+    icon: ""
 
 defaults:
   - scope:
       path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: false
-      related: false
-  - scope:
-      path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: default
 
 # Exclude from processing.
 # The following items will not be processed, by default.

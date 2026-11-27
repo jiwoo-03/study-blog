@@ -56,4 +56,17 @@
   - 1920px 등 1280px보다 넓은 화면에서 재현해보니 실제로 헤더 양옆이 흰 여백으로 남는 걸 확인 — 원인은 배경색을 `.greedy-nav`(내부, max-width 1280px로 제한됨)에 줘서였고, 바깥 `.masthead`(전체 폭)에 배경색을 주고 `.greedy-nav` 자체 배경은 투명 처리해서 해결
   - 겸사겸사 로고/메뉴 글자색이 흰색이 아니라 흐릿한 회색으로 보이던 오래된 버그도 발견(테마의 `.greedy-nav a` 규칙이 `.site-title` 클래스 규칙보다 specificity가 높아서 이김) → `$masthead-link-color`/`$masthead-link-color-hover` 변수를 직접 재정의해서 수정
   - 로컬 서버 + Playwright로 1920px/1280px/모바일 모두 재확인, 전체 폭 꽉 채움과 흰 글씨 모두 정상 렌더링 확인
+  - 커밋(3d5a0e6)·push 완료, GitHub Pages 재빌드 후 실제 배포본에서 정상 반영 확인
+- 사용자가 바탕화면의 `panthera-jekyll-master` 폴더(완전한 포트폴리오형 Jekyll 테마, christianezeani/panthera-jekyll)를 보여주며 이 구조대로 블로그를 바꿔달라고 요청
+  - 테마 폴더를 분석해 구조(왼쪽 고정 사이드바 + 오른쪽 콘텐츠, Home=프로필, 글 목록=/blog, Resume/Skills/Contact 등 더미 페이지) 파악
+  - 세 가지 확인 필요 사항을 AskUserQuestion으로 질문: (1) Home 구성(글 목록 그대로 vs 테마 원형 구조) → 테마 원형 구조 선택, (2) 프로필 사진 사용 여부 → 사용 안 함(플레이스홀더), (3) 색상 톤(기존 버건디 유지 vs 테마 기본 블루) → 테마 기본 블루 선택
+  - `_config.yml`: `remote_theme: "christianezeani/panthera-jekyll"`로 교체, `subtitle`/`footer.copyright_text`/`menu`(Home, Skills & Offers, Contact Me, My Resume, Blog Posts) 추가, `paginate`/`paginate_path` 추가, `defaults`를 테마 샘플대로 `pages → layout: default`로 단순화, 플러그인을 `jekyll-paginate`/`jekyll-seo-tag`로 교체(minimal-mistakes 전용이던 `jekyll-include-cache` 제거)
+  - `Gemfile`도 동일하게 교체, `bundle install` 성공
+  - 더 이상 안 쓰는 `assets/css/main.scss`(minimal-mistakes용 커스텀 scss)와 `_data/navigation.yml` 삭제 — panthera-jekyll은 자체 `assets/css/style.scss`(바닐라, 커스텀 색상 없음)와 `_config.yml`의 `menu`를 사용하므로 불필요
+  - `about.markdown`/`404.html`/`_posts/2026-11-26-transformer.markdown`의 `layout: single`(minimal-mistakes 전용)을 제거/`layout: post`로 수정
+  - `index.markdown`을 테마의 "MY PROFILE" 스타일 Home 페이지로 교체(라틴어 lorem ipsum 대신 "소개 글은 추후 작성 예정입니다" 같은 짧은 한국어 플레이스홀더 사용)
+  - `blog/index.html`(글 목록, `{% include posts/index.html %}` + pagination), `skills-and-offers.md`/`contact.md`/`resume.md`(전부 "내용은 추후 작성 예정입니다" 스텁) 신규 생성
+  - `_data/comments.yml`은 의도적으로 생성하지 않음(테마 기본값이 Disqus 활성화라서, 요청 없는 댓글 기능이 켜지지 않도록)
+  - `bundle exec jekyll build` 성공(에러 없음, Sass deprecation 경고만), remote_theme를 통해 테마의 assets(아이콘 90개, jquery, fontawesome, style.css)까지 전부 정상적으로 끌려옴을 확인
+  - 로컬 서버 + Playwright로 데스크톱/모바일 Home, /blog, 포스트 페이지 스크린샷 확인 — 블루 사이드바, 메뉴, 공유 아이콘, 포스트 카드 전부 테마 원본 모습 그대로 정상 렌더링
   - 아직 커밋·push는 하지 않음 (사용자 승인 대기)
