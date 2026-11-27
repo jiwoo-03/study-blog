@@ -14,3 +14,17 @@ blockquote {
 .pan-post-list--left {
   display: none;
 }
+
+// Tighten up post list cards: less gap between them, slightly smaller
+.pan-post-list {
+  --content-height: 70px;
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &--content {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
