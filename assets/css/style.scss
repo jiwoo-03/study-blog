@@ -9,3 +9,8 @@ blockquote {
   border-inline-start: 0.25em solid rgb(0, 122, 204);
   font-style: italic;
 }
+
+// Drop the default thumbnail image on post list cards (Home, Research)
+.pan-post-list--left {
+  display: none;
+}
