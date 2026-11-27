@@ -38,6 +38,11 @@ plugins:
 paginate: 10
 paginate_path: "/page:num/"
 
+collections:
+  research:
+    output: true
+    permalink: /research/:path/
+
 subtitle: 개인 공부 자료를 정리하는 블로그
 
 footer:
@@ -70,6 +75,11 @@ defaults:
       type: pages
     values:
       layout: default
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: post
 
 # Exclude from processing.
 # The following items will not be processed, by default.
